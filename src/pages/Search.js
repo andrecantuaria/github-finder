@@ -27,8 +27,8 @@ function Search() {
 
         try {
             const apiUrl = `https://api.github.com/users/${username}`;
-            const token = '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';
-            const options = { headers: { Authorization: `Bearer ${token}` } };
+            const githubToken = process.env.REACT_APP_GITHUB_TOKEN;
+            const options = { headers: { Authorization: `Bearer ${githubToken}` } };
 
             const response = await axios.get(apiUrl, options);
 
