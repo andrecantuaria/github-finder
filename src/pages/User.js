@@ -24,7 +24,7 @@ function User() {
         const fetchUserData = async () => {
             try {
                 const apiUrlUser = `https://api.github.com/users/${username}`;
-                const githubToken = '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';
+                const githubToken = process.env.REACT_APP_GITHUB_TOKEN;
                 const options = { headers: { Authorization: `Bearer ${githubToken}` } };
 
                 const responseUser = await axios.get(apiUrlUser, options);
